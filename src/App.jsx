@@ -107,8 +107,11 @@ const App = () => {
         {isMenuOpen && (
           <div className="absolute top-full left-0 right-0 bg-[#FFFAFA] border-b border-gray-100 z-[100] md:hidden shadow-lg animate-in fade-in slide-in-from-top-5 duration-300">
             <div className="flex flex-col p-6 gap-4">
-              {["Our Solutions", "AI Core", "How It Works", "Contact", "FAQ"].map((item) => (
-                <a key={item} href="#" className="text-lg font-medium text-[#1C5332] hover:pl-2 transition-all" onClick={() => setIsMenuOpen(false)}>
+              {["Our Solutions", "AI Core", "How It Works", "Contact"].map((item) => (
+                <a key={item} href={item === "Our Solutions" ? "#trust-gap" :
+                      item === "AI Core" ? "#security-features" :
+                      item === "How It Works" ? "#how-it-works" :
+                      item === "Contact" ? "#contact" : "#faq"} className="text-lg font-medium text-[#1C5332] hover:pl-2 transition-all" onClick={() => setIsMenuOpen(false)}>
                   {item}
                 </a>
               ))}
